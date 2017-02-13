@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM qflow/ubuntu-video-processing:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
