@@ -1,4 +1,4 @@
-FROM qflow/ubuntu-caffe
+FROM qflow/ubuntu-caffe-digits
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
