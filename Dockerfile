@@ -1,4 +1,4 @@
-FROM qflow/ubuntu-caffe
+FROM qflow/ubuntu-video-processing
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
