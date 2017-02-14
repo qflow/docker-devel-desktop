@@ -4,9 +4,12 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
 
 RUN apt-get update && \
-    apt-get install -y xubuntu-desktop && \
+    apt-get install -y xubuntu-desktop xfce4-goodies && \
     apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
     apt-get install -y wget tightvncserver fuse firefox && \
+    apt-get autoclean && \
+    apt-get autoremove && \
+    rm -rf /var/lib/apt/lists/* && \
     mkdir /root/.vnc
 
 ADD xstartup /root/.vnc/xstartup
