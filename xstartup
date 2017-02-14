@@ -1,8 +1,11 @@
 #!/bin/sh
 
+[ -r /etc/sysconfig/i18n ] && . /etc/sysconfig/i18n
+export LANG
+export SYSFONT
+vncconfig -iconic &
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
-xfce4-session
 OS=`uname -s`
 if [ $OS = 'Linux' ]; then
   case "$WINDOWMANAGER" in
@@ -23,4 +26,4 @@ fi
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
 xsetroot -solid grey
 xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
-twm &
+startxfce4 &
