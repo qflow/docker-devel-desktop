@@ -23,6 +23,6 @@ WORKDIR /tools
 RUN wget -O KDevelop.AppImage http://download.kde.org/stable/kdevelop/5.0.3/bin/linux/KDevelop-5.0.3-x86_64.AppImage
 RUN chmod +x KDevelop.AppImage
 
-CMD /usr/bin/vncserver :1 -geometry $GEOMETRY -depth 24 -dpi 100
+CMD /usr/bin/vncserver :1 -geometry $GEOMETRY -depth 24 -dpi 100 && tail -f /root/.vnc/*:1.log
 
 EXPOSE 5901
