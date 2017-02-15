@@ -2,6 +2,7 @@ FROM qflow/ubuntu-video-processing
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
+ENV GEOMETRY 1366x768
 
 RUN apt-get update && \
     apt-get install -y xubuntu-desktop xfce4-goodies && \
@@ -22,6 +23,6 @@ WORKDIR /tools
 RUN wget -O KDevelop.AppImage http://download.kde.org/stable/kdevelop/5.0.3/bin/linux/KDevelop-5.0.3-x86_64.AppImage
 RUN chmod +x KDevelop.AppImage
 
-CMD /usr/bin/vncserver :1 -geometry 1366x768 -depth 24 && tail -f /root/.vnc/*:1.log
+CMD /usr/bin/vncserver :1 -geometry $GEOMETRY -depth 24 -dpi 100
 
 EXPOSE 5901
