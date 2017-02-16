@@ -23,12 +23,12 @@ WORKDIR /home/root/Downloads
 RUN wget https://bintray.com/tigervnc/stable/download_file?file_path=tigervnc-1.7.1.x86_64.tar.gz -O tigervnc-1.7.1.x86_64.tar.gz
 RUN tar zxf tigervnc-1.7.1.x86_64.tar.gz && cp -R tigervnc-1.7.1.x86_64/usr/bin/* /usr/bin
 
-#WORKDIR /tools
-#RUN wget -O KDevelop.AppImage http://download.kde.org/stable/kdevelop/5.0.3/bin/linux/KDevelop-5.0.3-x86_64.AppImage
-#RUN chmod +x KDevelop.AppImage
-RUN add-apt-repository -y ppa:blaze/kf5 && \
-    apt update && \
-    apt install -y kdevelop
+WORKDIR /tools
+RUN wget -O KDevelop.AppImage http://download.kde.org/stable/kdevelop/5.0.3/bin/linux/KDevelop-5.0.3-x86_64.AppImage
+RUN chmod +x KDevelop.AppImage
+#RUN add-apt-repository -y ppa:blaze/kf5 && \
+#    apt update && \
+#    apt install -y kdevelop
 
 CMD bash -c "vncserver -kill :1; vncserver :1 -geometry 1366x768 -depth 24 && tail -F /root/.vnc/*.log"
 
