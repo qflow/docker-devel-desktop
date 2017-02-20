@@ -29,6 +29,6 @@ RUN wget -O KDevelop.AppImage http://download.kde.org/stable/kdevelop/5.0.3/bin/
 #    apt update && \
 #    apt install -y kdevelop
 
-CMD bash -c "vncserver -kill :1; vncserver :1 -geometry 1366x768 -depth 24 && tail -F /root/.vnc/*.log"
+CMD bash -c "vncserver -kill :1; vncserver :1 -geometry $GEOMETRY -depth 24 && tail -F /root/.vnc/*.log"
 
 EXPOSE 5901
