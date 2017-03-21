@@ -7,7 +7,7 @@ ENV GEOMETRY 1366x768
 RUN apt-get update && \
     apt-get install -y xubuntu-desktop xfce4-goodies && \
     apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal && \
-    apt-get install -y wget fuse firefox && \
+    apt-get install -y wget fuse firefox vlc chromium-browser && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* && \
