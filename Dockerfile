@@ -23,7 +23,7 @@ RUN wget https://bintray.com/tigervnc/stable/download_file?file_path=tigervnc-1.
     tar zxf tigervnc-1.7.1.x86_64.tar.gz && cp -R tigervnc-1.7.1.x86_64/usr/bin/* /usr/bin
 
 WORKDIR /tools
-RUN wget -O KDevelop.AppImage http://download.kde.org/stable/kdevelop/5.0.4/bin/linux/KDevelop-5.0.4-x86_64.AppImage && \
+RUN wget -O KDevelop.AppImage https://download.kde.org/stable/kdevelop/5.1.0/bin/linux/KDevelop-5.1.0-x86_64.AppImage && \
     chmod +x KDevelop.AppImage
 #RUN add-apt-repository -y ppa:blaze/kf5 && \
 #    apt update && \
