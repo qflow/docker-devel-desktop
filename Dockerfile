@@ -5,6 +5,7 @@ ENV USER root
 ENV GEOMETRY 1366x768
 
 RUN apt-get update && \
+    apt-get install tasksel & \
     tasksel install xubuntu-desktop && \
     apt-get install -y wget chromium-browser && \
     apt-get autoclean && \
