@@ -1,4 +1,4 @@
-FROM qflow/ubuntu-video-processing
+FROM nvidia/cuda:9.2-devel-ubuntu18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
