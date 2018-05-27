@@ -4,9 +4,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
 ENV GEOMETRY 1366x768
 
-RUN apt-get update && \
-    apt-get install tasksel tasksel-data & \
-    tasksel install xubuntu-desktop && \
+RUN apt-get update
+RUN apt-get install tasksel tasksel-data
+RUN tasksel install xubuntu-desktop && \
     apt-get install -y wget chromium-browser && \
     apt-get autoclean && \
     apt-get autoremove && \
